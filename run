@@ -11,3 +11,4 @@ fi
 
 pnpm install
 pnpm exec tsc --build --force
+pnpm test -r
