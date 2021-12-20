@@ -10,10 +10,8 @@ function install() {
     fi
 
     if [[ ! $(command -v nvm) ]]; then
-        set +e
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-fi
+    fi
 
     nvm install
 }

@@ -1,0 +1,20 @@
+{
+  "name": "@triptease/terra-ratchet-test",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "NODE_ENV=development mocha '**/*.test.ts'"
+  },
+  "dependencies": {
+    "@triptease/terra-ratchet": "1.0.0",
+    "@bodar/totallylazy": "^0.465.307",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "esbuild": "^0.14.6",
+    "esbuild-runner": "^2.2.1",
+    "mocha": "^9.1.3"
+  }
+}

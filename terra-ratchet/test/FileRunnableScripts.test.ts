@@ -6,7 +6,7 @@ import {failingScript, workingScript} from "./shared";
 
 describe('FileRunnableScripts', () => {
     it('should return all scripts in a directory (name and hash)', async () => {
-        const directory = new File('test/examples', File.workingDirectory);
+        const directory = new File('examples', __dirname);
         const scripts = await new FileRunnableScripts(directory).scripts();
         expect(scripts).to.eql([failingScript, workingScript]);
     });

@@ -6,7 +6,7 @@ import {expect} from "chai";
 import {failingScript, workingScript} from "./shared";
 
 describe('ShellScriptRunner', () => {
-    const directory = new File('test/examples', File.workingDirectory);
+    const directory = new File('examples', __dirname);
 
     it('can execute a shell script', async () => {
         const result = await array(new ShellScriptRunner(directory).run(workingScript));

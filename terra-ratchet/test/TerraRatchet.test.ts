@@ -1,6 +1,8 @@
 import {expect} from 'chai';
 import {describe, it} from 'mocha';
-import {InMemoryExecutedScripts, InMemoryRunnableScripts, NoOpScriptRunner, Script, TerraRatchet,} from '../src';
+import {NoOpScriptRunner, Script, TerraRatchet} from '../src';
+import {InMemoryRunnableScripts} from "../src/InMemoryRunnableScripts";
+import {InMemoryExecutedScripts} from "../src/InMemoryExecutedScripts";
 
 describe('TerraRatchet', async () => {
     const script1 = {name: '001.sql', hash: '1'} as Script;

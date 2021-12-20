@@ -19,7 +19,6 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "preserveSymlinks": false,
-    "outDir": "./dist"
   },
   "exclude": ["node_modules"]
 }
