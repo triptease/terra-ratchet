@@ -18,6 +18,10 @@
   "publishConfig": {
     "directory": "../dist"
   },
+  "files": [
+    "*.js",
+    "*.d.ts"
+  ],
   "dependencies": {
     "@triptease/terra-ratchet": "1.0.0",
     "@bodar/totallylazy": "^0.465.307",

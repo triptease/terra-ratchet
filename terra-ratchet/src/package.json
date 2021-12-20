@@ -18,6 +18,10 @@
   "publishConfig": {
     "directory": "../dist"
   },
+  "files": [
+    "*.js",
+    "*.d.ts"
+  ],
   "dependencies": {
     "@bodar/totallylazy": "^0.465.307",
     "tslib": "^2.3.1"

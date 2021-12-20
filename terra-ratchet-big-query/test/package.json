@@ -1,6 +1,7 @@
 {
   "name": "@triptease/terra-ratchet-big-query-test",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "test": "NODE_ENV=development mocha '**/*.test.ts'"
   },
