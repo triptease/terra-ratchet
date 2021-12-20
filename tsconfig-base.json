@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "module": "commonjs",
+    "target": "ES6",
+    "noEmitOnError": true,
+    "sourceMap": true,
+    "importHelpers": true,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "preserveSymlinks": false,
+    "outDir": "./dist"
+  },
+  "exclude": ["node_modules"]
+}

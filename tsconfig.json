@@ -1,0 +1,7 @@
+{
+  "files": [],
+  "references": [
+    {"path": "terra-ratchet"},
+    {"path": "terra-ratchet-big-query"},
+  ]
+}
