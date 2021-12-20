@@ -11,6 +11,13 @@
     "url": "https://github.com/triptease/terra-ratchet/issues"
   },
   "homepage": "https://github.com/triptease/terra-ratchet/terra-ratchet",
+  "scripts": {
+    "prepublishOnly": "cp package.json ../dist",
+    "postpublish": "rm ../dist/package.json"
+  },
+  "publishConfig": {
+    "directory": "../dist"
+  },
   "dependencies": {
     "@triptease/terra-ratchet": "1.0.0",
     "@bodar/totallylazy": "^0.465.307",
