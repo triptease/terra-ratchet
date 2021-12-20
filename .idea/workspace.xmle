@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="115a2afa-8261-4e13-bf36-df128bc18670" name="Changes" comment="" />
+    <list default="true" id="115a2afa-8261-4e13-bf36-df128bc18670" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/terra-ratchet-big-query/src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/terra-ratchet-big-query/src/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terra-ratchet-big-query/test/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/terra-ratchet-big-query/test/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terra-ratchet/src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/terra-ratchet/src/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terra-ratchet/test/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/terra-ratchet/test/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,10 +73,10 @@
       <recent name="$PROJECT_DIR$/terra-ratchet-big-query" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/terra-ratchet-big-query/src" />
       <recent name="$PROJECT_DIR$/terra-ratchet" />
       <recent name="$PROJECT_DIR$/terra-ratchet-big-query/test/examples" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="$PROJECT_DIR$/terra-ratchet-big-query/src/BigQueryScriptRunner.ts" />
@@ -179,7 +184,7 @@
       <workItem from="1640002042103" duration="11564000" />
       <workItem from="1640016376636" duration="186000" />
       <workItem from="1640016567758" duration="8645000" />
-      <workItem from="1640025763626" duration="2415000" />
+      <workItem from="1640025763626" duration="6014000" />
     </task>
     <servers />
   </component>
