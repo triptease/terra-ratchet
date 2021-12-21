@@ -10,7 +10,7 @@ importers:
 
   terra-ratchet-big-query/src:
     specifiers:
-      '@bodar/terra-ratchet': workspace:*
+      '@bodar/terra-ratchet': 0.0.0
       '@bodar/totallylazy': ^0.465.307
       '@google-cloud/bigquery': ^5.9.3
       tslib: ^2.3.1
@@ -22,7 +22,7 @@ importers:
 
   terra-ratchet-big-query/test:
     specifiers:
-      '@bodar/terra-ratchet-big-query': workspace:*
+      '@bodar/terra-ratchet-big-query': 0.0.0
       '@bodar/totallylazy': ^0.465.307
       '@types/chai': ^4.3.0
       '@types/mocha': ^9.0.0
@@ -53,7 +53,7 @@ importers:
 
   terra-ratchet/test:
     specifiers:
-      '@bodar/terra-ratchet': workspace:*
+      '@bodar/terra-ratchet': 0.0.0
       '@bodar/totallylazy': ^0.465.307
       '@types/chai': ^4.3.0
       '@types/mocha': ^9.0.0
