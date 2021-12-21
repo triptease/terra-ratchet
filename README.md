@@ -1,5 +1,7 @@
 # TerraRatchet
 
+[![<Triptease>](https://circleci.com/gh/triptease/terra-ratchet.svg?style=svg)](https://app.circleci.com/pipelines/github/triptease/terra-ratchet)
+
 Migrate your environments with real code today!
 
 ## Why?
