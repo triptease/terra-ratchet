@@ -2,23 +2,18 @@ version: 2.1
 
 commands:
   restore_pnpm_cache:
-    description: "Restore PNPM packages from CircleCI cache"
     steps:
       - restore_cache:
-          name: Restore PNPM Package Cache
-          keys:
-            - pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
+          name: restore
+          keys: pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
   save_pnpm_cache:
-    description: "Save PNPM packages to CircleCI cache"
     steps:
       - save_cache:
-          name: Save Yarn Package Cache
+          name: save
           key: pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
-          paths:
-            - ~/.pnpm-store
+          paths: [~/.pnpm-store]
 
 jobs:
-
   build:
     docker:
       - image: cimg/base:2021.04
@@ -26,27 +21,10 @@ jobs:
       - checkout
       - restore_pnpm_cache
       - run:
-          name: Build & Publish
-          command: |
-            ./run ci
+          name: build
+          command: ./run ci
       - store_artifacts:
           path: ./**/dist/
       - save_pnpm_cache
 
 
-
-workflows:
-  version: 2
-
-  build-deploy:
-    jobs:
-      - capture_build_number:
-          filters:
-            branches:
-              only: master
-      - build:
-          requires:
-            - capture_build_number
-          filters:
-            branches:
-              only: master
