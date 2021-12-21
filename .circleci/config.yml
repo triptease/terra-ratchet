@@ -1,21 +1,19 @@
 version: 2.1
 
 commands:
-  restore_pnpm_cache:
-    description: "Restore pnpm packages"
+  restore_nvm:
     steps:
-      - restore_cache:
-          name: restore
-          keys:
-            - pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
-  save_pnpm_cache:
-    description: "Save pnpm packages"
+      - restore:
+          name: "Restore NVM"
+          keys: nvm-{{ checksum ".nvmrc" }}
+  save_nvm:
+    description: "Save NVM"
     steps:
-      - save_cache:
-          name: save
-          key: pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
+      - save:
+          name: "Save NVM"
+          key: nvm-{{ checksum ".nvmrc" }}
           paths:
-            - ~/.cache/pnpm
+            - ~/.nvm
 
 jobs:
   build:
@@ -23,12 +21,12 @@ jobs:
       - image: cimg/base:2021.04
     steps:
       - checkout
-      - restore_pnpm_cache
+      - restore_nvm
       - run:
           name: build
           command: ./run ci
       - store_artifacts:
           path: ./**/dist/
-      - save_pnpm_cache
+      - save_nvm
 
 
