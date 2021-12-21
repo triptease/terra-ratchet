@@ -12,8 +12,8 @@
   },
   "homepage": "https://github.com/triptease/terra-ratchet/",
   "scripts": {
-    "prepublishOnly": "sed \"s/0\\.0\\.0/${VERSION}/g\" package.json > ../dist/package.json",
-    "postpublish": "rm ../dist/package.json"
+    "prepublishOnly": "sed \"s/0\\.0\\.0/${VERSION}/g\" package.json > ../dist/package.json; cp ../../README.md ../dist/",
+    "postpublish": "rm ../dist/package.json ../dist/README.md"
   },
   "publishConfig": {
     "directory": "../dist",
