@@ -2,16 +2,20 @@ version: 2.1
 
 commands:
   restore_pnpm_cache:
+    description: "Restore pnpm packages from CircleCI cache"
     steps:
       - restore_cache:
-          name: restore
-          keys: pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
+          name: Restore pnpm Package Cache
+          keys:
+            - pnpm-packages-v2-{{ checksum "pnpm.lock" }}
   save_pnpm_cache:
+    description: "Save pnpm packages to CircleCI cache"
     steps:
       - save_cache:
-          name: save
-          key: pnpm-packages-{{ checksum "pnpm-lock.yaml" }}
-          paths: [~/.pnpm-store]
+          name: Save pnpm Package Cache
+          key: pnpm-packages-v2-{{ checksum "pnpm.lock" }}
+          paths:
+            - ~/.cache/pnpm
 
 jobs:
   build:
