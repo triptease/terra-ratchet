@@ -63,7 +63,7 @@ const tableId = 'ratchet-table-id';
 
 ## Details
 
-TerraRatchet is made up of a couple of 3 different parts:
+TerraRatchet is made up of a couple of different parts:
 
 ### Script location (RunnableScripts)
 
