@@ -1,17 +1,18 @@
 version: 2.1
 
 commands:
-  restore_nvm:
+  restore_nvm_cache:
     description: "Restore NVM"
     steps:
-      - restore:
-          name: "Restore NVM"
-          keys: nvm-{{ checksum ".nvmrc" }}
-  save_nvm:
+      - restore_cache:
+          name: Restore NVM
+          keys:
+            - nvm-{{ checksum ".nvmrc" }}
+  save_nvm_cache:
     description: "Save NVM"
     steps:
-      - save:
-          name: "Save NVM"
+      - save_cache:
+          name: Save NVM
           key: nvm-{{ checksum ".nvmrc" }}
           paths:
             - ~/.nvm
@@ -22,12 +23,12 @@ jobs:
       - image: cimg/base:2021.04
     steps:
       - checkout
-      - restore_nvm
+      - restore_nvm_cache
       - run:
           name: build
           command: ./run ci
       - store_artifacts:
           path: ./**/dist/
-      - save_nvm
+      - save_nvm_cache
 
 
