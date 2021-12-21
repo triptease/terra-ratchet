@@ -2,6 +2,7 @@
 set -Eeo pipefail
 
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+export NPM_TOKEN=${NPM_TOKEN-ignore}
 
 source ${dir}/nvm.sh
 
@@ -9,6 +10,18 @@ if [[ ! $(command -v pnpm) ]]; then
     npm install -g pnpm
 fi
 
-pnpm install
-pnpm exec tsc --build --force
-pnpm test -r
+
+function build() {
+  pnpm install
+  pnpm exec tsc --build --force
+  pnpm test -r
+}
+
+function ci() {
+  build
+  pnpm publish -r
+}
+
+command="${1-build}"
+set +e; shift; set -Eeo pipefail;
+$command "$@"
