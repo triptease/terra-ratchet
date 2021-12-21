@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/triptease/terra-ratchet/issues"
   },
-  "homepage": "https://github.com/triptease/terra-ratchet/terra-ratchet",
+  "homepage": "https://github.com/triptease/terra-ratchet/tree/master/terra-ratchet-big-query",
   "scripts": {
     "prepublishOnly": "sed \"s/0\\.0\\.0/${VERSION}/g; s/workspace:\\*/${VERSION}/g\" package.json > ../dist/package.json",
     "postpublish": "rm ../dist/package.json"
