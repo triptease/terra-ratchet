@@ -2,7 +2,6 @@
 set -Eeo pipefail
 
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-export NPM_TOKEN=${NPM_TOKEN-ignore}
 
 source ${dir}/nvm.sh
 
@@ -14,12 +13,12 @@ fi
 function build() {
   pnpm install
   pnpm exec tsc --build --force
-  pnpm test -r
+  pnpm test -r --filter=*test
 }
 
 function ci() {
   build
-  pnpm publish -r
+  pnpm publish -r --filter=!*test
 }
 
 command="${1-build}"
