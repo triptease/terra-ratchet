@@ -1,6 +1,6 @@
 # TerraRatchet
 
-[![<Triptease>](https://circleci.com/gh/triptease/terra-ratchet.svg?style=svg)](https://app.circleci.com/pipelines/github/triptease/terra-ratchet) [![npm version](https://badge.fury.io/js/@bodar%2Fterra-ratchet.svg)](https://badge.fury.io/js/@bodar%2Fterra-ratchet)
+[![<Triptease>](https://circleci.com/gh/triptease/terra-ratchet.svg?style=svg)](https://app.circleci.com/pipelines/github/triptease/terra-ratchet) [![npm version](https://badge.fury.io/js/@bodar%2Fterra-ratchet.svg)](https://www.npmjs.com/package/@bodar/terra-ratchet)
 
 Migrate your environments with real code today!
 
