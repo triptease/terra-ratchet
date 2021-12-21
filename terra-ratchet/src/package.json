@@ -6,7 +6,7 @@
     "url": "git+ssh://git@github.com/triptease/terra-ratchet.git"
   },
   "author": "Triptease",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/triptease/terra-ratchet/issues"
   },
