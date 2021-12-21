@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -Eeo pipefail
 
 export NVM_DIR=${NVM_DIR-$HOME/.nvm}
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -10,8 +11,10 @@ function install() {
     fi
 
     if [[ ! $(command -v nvm) ]]; then
+        set +e
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    fi
+        set -Eeo pipefail
+fi
 
     nvm install
 }
