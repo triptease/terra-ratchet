@@ -11,7 +11,7 @@ Migrate your environments with real code today!
 * Have you ever wanted to run a single command just once against each environment?
 * Have you ever waited for a plugin to be upgraded to use a new feature that was just released?
 
-If the answer to any of those question was yes then TerraRatchet may be what you have been waiting for.
+If the answer to any of those question is yes then TerraRatchet may be what you have been waiting for.
 
 ## How?
 
