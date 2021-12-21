@@ -18,24 +18,27 @@ If the answer to any of those question is yes then TerraRatchet may be what you 
 If you have used a DB migration tool recently you probably already know how to use TerraRatchet, you have a folder with 
 a bunch of scripts that need to be run once in a certain order (these are normally checked in):
 
-* 001-deploy-postgres.sh
-* 002-create-database.postgres.sql
-* 003-create-bigquery-dataset.sh
-* 004-add-permissions-to-dataset.sh
-* 005-import-table.bigquery.sql
-* 006-create-redis-server.sh
-* 007-create-timeseries.redis
+```shell
+scripts
+  001-deploy-postgres.sh
+  002-create-database.postgres.sql
+  003-create-bigquery-dataset.sh
+  004-add-permissions-to-dataset.sh
+  005-import-table.bigquery.sql
+  006-create-redis-server.sh
+  007-create-timeseries.redis
+```
 
 You have a DB or file server than can store which scripts have been run, normally part of the environment you are deploying.
 
 Now just add TerraRatchet to your build.
 
-## Example
+## Example (ratchet.ts)
 
 ```typescript
 import { File } from '@bodar/totallylazy/files';
+import { TerraRatchet, FileRunnableScripts, NoOpScriptRunner, ShellScriptRunner } from '@bodar/terra-ratchet';
 import { BigQueryExecutedScripts, BigQueryScriptRunner } from '@bodar/terra-ratchet-big-query';
-import { FileRunnableScripts, NoOpScriptRunner, ShellScriptRunner, TerraRatchet } from '@bodar/terra-ratchet';
 
 const projectId = process.env.GOOGLE_CLOUD_PROJECT;
 const datasetId = process.env.CI === 'true' ? 'production' : 'development';
