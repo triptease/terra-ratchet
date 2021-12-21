@@ -10,9 +10,9 @@
   "bugs": {
     "url": "https://github.com/triptease/terra-ratchet/issues"
   },
-  "homepage": "https://github.com/triptease/terra-ratchet/tree/master/terra-ratchet-big-query",
+  "homepage": "https://github.com/triptease/terra-ratchet/",
   "scripts": {
-    "prepublishOnly": "sed \"s/0\\.0\\.0/${VERSION}/g; s/workspace:\\*/${VERSION}/g\" package.json > ../dist/package.json",
+    "prepublishOnly": "sed \"s/0\\.0\\.0/${VERSION}/g\" package.json > ../dist/package.json",
     "postpublish": "rm ../dist/package.json"
   },
   "publishConfig": {
@@ -24,7 +24,7 @@
     "*.d.ts"
   ],
   "dependencies": {
-    "@bodar/terra-ratchet": "workspace:*",
+    "@bodar/terra-ratchet": "0.0.0",
     "@bodar/totallylazy": "^0.465.307",
     "@google-cloud/bigquery": "^5.9.3",
     "tslib": "^2.3.1"
