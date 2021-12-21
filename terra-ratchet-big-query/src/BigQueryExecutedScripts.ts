@@ -1,6 +1,6 @@
 import {BigQuery, Table} from "@google-cloud/bigquery";
-import {ExecutedScripts, Script} from "@triptease/terra-ratchet";
-import {ConsoleLogger} from "@triptease/terra-ratchet/Logger";
+import {ExecutedScripts, Script} from "@bodar/terra-ratchet";
+import {ConsoleLogger} from "@bodar/terra-ratchet/Logger";
 
 const schema = {
     fields: [

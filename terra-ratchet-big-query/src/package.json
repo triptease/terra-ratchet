@@ -1,6 +1,6 @@
 {
-  "name": "@triptease/terra-ratchet-big-query",
-  "version": "1.0.0",
+  "name": "@bodar/terra-ratchet-big-query",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/triptease/terra-ratchet.git"
@@ -12,18 +12,19 @@
   },
   "homepage": "https://github.com/triptease/terra-ratchet/terra-ratchet",
   "scripts": {
-    "prepublishOnly": "cp package.json ../dist",
+    "prepublishOnly": "sed \"s/0\\.0\\.0/${VERSION}/g; s/workspace:\\*/${VERSION}/g\" package.json > ../dist/package.json",
     "postpublish": "rm ../dist/package.json"
   },
   "publishConfig": {
-    "directory": "../dist"
+    "directory": "../dist",
+    "access": "public"
   },
   "files": [
     "*.js",
     "*.d.ts"
   ],
   "dependencies": {
-    "@triptease/terra-ratchet": "1.0.0",
+    "@bodar/terra-ratchet": "workspace:*",
     "@bodar/totallylazy": "^0.465.307",
     "@google-cloud/bigquery": "^5.9.3",
     "tslib": "^2.3.1"

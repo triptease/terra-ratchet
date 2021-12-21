@@ -1,12 +1,12 @@
 {
-  "name": "@triptease/terra-ratchet-big-query-test",
-  "version": "1.0.0",
+  "name": "@bodar/terra-ratchet-big-query-test",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "test": "NODE_ENV=development mocha '**/*.test.ts'"
   },
   "dependencies": {
-    "@triptease/terra-ratchet-big-query": "1.0.0",
+    "@bodar/terra-ratchet-big-query": "workspace:*",
     "@bodar/totallylazy": "^0.465.307",
     "tslib": "^2.3.1"
   },
