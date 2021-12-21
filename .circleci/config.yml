@@ -6,7 +6,8 @@ commands:
     steps:
       - restore_cache:
           name: Restore NVM
-          keys: nvm-{{ checksum ".nvmrc" }}
+          keys:
+            - nvm-{{ checksum ".nvmrc" }}
   save_nvm_cache:
     description: "Save NVM"
     steps:
