@@ -77,8 +77,8 @@ TerraRatchet is made up of a couple of different parts:
 | ExecutedScripts         | Status   | Description                                             |
 |-------------------------|----------|---------------------------------------------------------|
 | InMemoryExecutedScripts | Released | Can be used for testing                                 |
+| FileExecutedScripts     | Released | Records which scripts have been run in a json file      |
 | BigQueryExecutedScripts | Released | Records which scripts have been run in a BigQuery table |
-| FileExecutedScripts     | Planned  | Records which scripts have been run in a json file      |
 | PostgresExecutedScripts | Planned  | Records which scripts have been run in a Postgres table |
 
 
