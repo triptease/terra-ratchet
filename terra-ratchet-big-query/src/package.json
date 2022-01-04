@@ -1,5 +1,5 @@
 {
-  "name": "@bodar/terra-ratchet-big-query",
+  "name": "@triptease/terra-ratchet-big-query",
   "version": "0.0.0",
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "*.d.ts"
   ],
   "dependencies": {
-    "@bodar/terra-ratchet": "0.0.0",
+    "@triptease/terra-ratchet": "0.0.0",
     "@bodar/totallylazy": "^0.465.307",
     "@google-cloud/bigquery": "^5.9.3",
     "tslib": "^2.3.1"

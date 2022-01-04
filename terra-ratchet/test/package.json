@@ -1,12 +1,12 @@
 {
-  "name": "@bodar/terra-ratchet-test",
+  "name": "@triptease/terra-ratchet-test",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "test": "NODE_ENV=development mocha '**/*.test.ts'"
   },
   "dependencies": {
-    "@bodar/terra-ratchet": "0.0.0",
+    "@triptease/terra-ratchet": "0.0.0",
     "@bodar/totallylazy": "^0.465.307",
     "tslib": "^2.3.1"
   },

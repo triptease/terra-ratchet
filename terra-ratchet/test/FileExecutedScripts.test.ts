@@ -1,6 +1,6 @@
 import {describe, it} from "mocha";
 import {File} from "@bodar/totallylazy/files";
-import {FileExecutedScripts, Script} from "@bodar/terra-ratchet";
+import {FileExecutedScripts, Script} from "@triptease/terra-ratchet";
 import {expect} from "chai";
 
 describe('FileExecutedScripts', () => {

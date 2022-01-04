@@ -1,6 +1,6 @@
 # TerraRatchet
 
-[![<Triptease>](https://circleci.com/gh/triptease/terra-ratchet.svg?style=svg)](https://app.circleci.com/pipelines/github/triptease/terra-ratchet) [![npm version](https://badge.fury.io/js/@bodar%2Fterra-ratchet.svg)](https://www.npmjs.com/package/@bodar/terra-ratchet)
+[![<Triptease>](https://circleci.com/gh/triptease/terra-ratchet.svg?style=svg)](https://app.circleci.com/pipelines/github/triptease/terra-ratchet) [![npm version](https://badge.fury.io/js/@triptease%2Fterra-ratchet.svg)](https://www.npmjs.com/package/@triptease/terra-ratchet)
 
 Migrate your environments with real code today!
 
@@ -37,8 +37,8 @@ Now just add TerraRatchet to your build.
 
 ```typescript
 import { File } from '@bodar/totallylazy/files';
-import { TerraRatchet, FileRunnableScripts, NoOpScriptRunner, ShellScriptRunner } from '@bodar/terra-ratchet';
-import { BigQueryExecutedScripts, BigQueryScriptRunner } from '@bodar/terra-ratchet-big-query';
+import { TerraRatchet, FileRunnableScripts, NoOpScriptRunner, ShellScriptRunner } from '@triptease/terra-ratchet';
+import { BigQueryExecutedScripts, BigQueryScriptRunner } from '@triptease/terra-ratchet-big-query';
 
 const projectId = process.env.GOOGLE_CLOUD_PROJECT;
 const datasetId = process.env.CI === 'true' ? 'production' : 'development';

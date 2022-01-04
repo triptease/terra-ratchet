@@ -1,4 +1,4 @@
-import {Script, ScriptRunner} from "@bodar/terra-ratchet";
+import {Script, ScriptRunner} from "@triptease/terra-ratchet";
 import {BigQuery} from "@google-cloud/bigquery";
 import {get} from "@bodar/totallylazy/functions";
 import {File} from "@bodar/totallylazy/files";
