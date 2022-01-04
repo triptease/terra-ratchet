@@ -2,7 +2,10 @@ import {ExecutedScripts, Script} from "./api";
 import {File} from "@bodar/totallylazy/files";
 
 export class FileExecutedScripts implements ExecutedScripts {
-    constructor(private file: File = new File('ratchet.json', File.workingDirectory)) {
+    private readonly file: File;
+
+    constructor(file: string | File = 'ratchet.json') {
+        this.file = typeof file === "string" ? new File(file) : file;
     }
 
     async add(script: Script): Promise<void> {

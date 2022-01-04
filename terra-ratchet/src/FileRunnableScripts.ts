@@ -5,7 +5,10 @@ import {map} from "@bodar/totallylazy/transducers";
 import {hashSHA256} from "./hash";
 
 export class FileRunnableScripts implements RunnableScripts {
-    constructor(private directory: File) {
+    private readonly directory: File;
+
+    constructor(directory: string | File) {
+        this.directory = typeof directory === "string" ? new File(directory) : directory;
     }
 
     async scripts(): Promise<Script[]> {
