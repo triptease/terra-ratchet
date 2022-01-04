@@ -3,7 +3,10 @@ import {File} from "@bodar/totallylazy/files";
 import {run} from "@bodar/totallylazy/run";
 
 export class ShellScriptRunner implements ScriptRunner {
-    constructor(private directory: File, private env?: NodeJS.ProcessEnv) {
+    private readonly directory: File;
+
+    constructor(directory: string | File, private env?: NodeJS.ProcessEnv) {
+        this.directory = typeof directory === "string" ? new File(directory) : directory;
     }
 
     async* run(script: Script): AsyncIterableIterator<string> {

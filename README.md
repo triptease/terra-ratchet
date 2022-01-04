@@ -36,7 +36,6 @@ Now just add TerraRatchet to your build.
 ## Example (ratchet.ts)
 
 ```typescript
-import { File } from '@bodar/totallylazy/files';
 import { TerraRatchet, FileRunnableScripts, NoOpScriptRunner, ShellScriptRunner } from '@triptease/terra-ratchet';
 import { BigQueryExecutedScripts, BigQueryScriptRunner } from '@triptease/terra-ratchet-big-query';
 
@@ -49,13 +48,13 @@ const tableId = 'ratchet-table-id';
     const executedScripts = new BigQueryExecutedScripts(projectId, datasetId, tableId);
     await executedScripts.setup();
 
-    const scripts = new File('scripts', __dirname);
+    const directory = 'scripts';
 
-    await new TerraRatchet(new FileRunnableScripts(scripts), executedScripts)
+    await new TerraRatchet(new FileRunnableScripts(directory), executedScripts)
         .ignore('d.ts', 'js', 'map') // ignore generated code
         .register('006-create-redis-server.sh', new NoOpScriptRunner()) // skip manually ran script
-        .register('sql', new BigQueryScriptRunner(scripts, projectId, datasetId))
-        .register('sh', new ShellScriptRunner(scripts, env))
+        .register('sql', new BigQueryScriptRunner(directory, projectId, datasetId))
+        .register('sh', new ShellScriptRunner(directory, env))
         .run();
 })();
 ```
