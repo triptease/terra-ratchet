@@ -46,7 +46,6 @@ const tableId = 'ratchet-table-id';
 (async () => {
     const env = { ...process.env, projectId, datasetId };
     const executedScripts = new BigQueryExecutedScripts(projectId, datasetId, tableId);
-    await executedScripts.setup();
 
     const directory = 'scripts';
 

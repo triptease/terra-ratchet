@@ -1,21 +1,20 @@
 import {expect} from 'chai';
 import {BigQueryExecutedScripts} from "../src";
+import {canConnectToBigQuery, datasetId, projectId, tableId} from "./BigQueryTestConfig";
 
-// Manual tests as you can't delete or drop data from BigQuery reliably
-describe.skip('BigQueryExecutedScripts', function () {
+describe('BigQueryExecutedScripts', function () {
     this.timeout(1200000);
 
     const working = {name: 'working.sh', hash: '128ce5d4b1343fdc899279cb3b7d7b60a8f25e9d32794bf8cb278d95e2b25ed8'};
-    const scripts = new BigQueryExecutedScripts('triptease-onboard', 'temp');
+    const scripts = new BigQueryExecutedScripts(projectId, datasetId, tableId);
 
-    before(async () => {
-        await scripts.setup();
+    before(async function () {
+        if (!await canConnectToBigQuery()) this.skip();
     });
 
-    it('should work (as long as the table is empty!)', async () => {
+    it('can add a script', async () => {
+        expect(await scripts.list()).to.eql([]);
         await scripts.add(working);
-        const result = await scripts.list();
-        expect(result).to.eql([working]);
+        expect(await scripts.list()).to.eql([working]);
     });
 });
-

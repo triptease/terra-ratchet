@@ -13,7 +13,11 @@ fi
 source ${dir}/version.sh
 
 function build() {
-  pnpm install
+  if [ "${CI,,}" = "true" ]; then
+    pnpm install
+  else
+    pnpm install --no-frozen-lockfile
+  fi
   pnpm exec tsc --build --force
   pnpm test -r --filter=*test
 }

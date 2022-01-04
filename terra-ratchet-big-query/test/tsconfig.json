@@ -9,6 +9,9 @@
   "references": [
     {
       "path": "../src"
+    },
+    {
+      "path": "../../terra-ratchet/src"
     }
   ]
 }

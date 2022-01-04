@@ -6,7 +6,9 @@
     "test": "NODE_ENV=development mocha '**/*.test.ts'"
   },
   "dependencies": {
+    "@triptease/terra-ratchet": "0.0.0",
     "@triptease/terra-ratchet-big-query": "0.0.0",
+    "@google-cloud/bigquery": "^5.9.3",
     "@bodar/totallylazy": "^0.465.307",
     "tslib": "^2.3.1"
   },

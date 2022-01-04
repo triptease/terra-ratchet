@@ -23,6 +23,8 @@ importers:
   terra-ratchet-big-query/test:
     specifiers:
       '@bodar/totallylazy': ^0.465.307
+      '@google-cloud/bigquery': ^5.9.3
+      '@triptease/terra-ratchet': 0.0.0
       '@triptease/terra-ratchet-big-query': 0.0.0
       '@types/chai': ^4.3.0
       '@types/mocha': ^9.0.0
@@ -33,6 +35,8 @@ importers:
       tslib: ^2.3.1
     dependencies:
       '@bodar/totallylazy': 0.465.307
+      '@google-cloud/bigquery': 5.9.3
+      '@triptease/terra-ratchet': link:../../terra-ratchet/src
       '@triptease/terra-ratchet-big-query': link:../src
       tslib: 2.3.1
     devDependencies:

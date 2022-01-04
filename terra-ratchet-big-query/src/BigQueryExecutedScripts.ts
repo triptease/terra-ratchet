@@ -19,15 +19,6 @@ export class BigQueryExecutedScripts implements ExecutedScripts {
                 private logger = new ConsoleLogger()) {
     }
 
-    async setup(): Promise<Table> {
-        if (await this.exists()) return this.table;
-        this.logger.log(`Creating new table ${this.fullyQualified()}`);
-        const [newTable] = await this.bigQuery.dataset(this.datasetId).createTable(this.tableId, {schema});
-        this.logger.log(`Waiting for BigQuery`);
-        await delay(60000);
-        return newTable;
-    }
-
     get table(): Table {
         return this.bigQuery.dataset(this.datasetId).table(this.tableId);
     }
@@ -42,20 +33,17 @@ export class BigQueryExecutedScripts implements ExecutedScripts {
     }
 
     async list(): Promise<Script[]> {
-        const [rows] = await this.bigQuery.query(`select *
-                                                  from ${this.fullyQualified()}`);
-        return rows;
+        if (await this.exists()) {
+            const [rows] = await this.bigQuery.query(`select * from ${this.fullyQualified()}`);
+            return rows;
+        } else {
+            this.logger.log(`Creating new table ${this.fullyQualified()}`);
+            await this.bigQuery.dataset(this.datasetId).createTable(this.tableId, {schema});
+            return [];
+        }
     }
 
     private fullyQualified(): string {
         return `\`${this.projectId}.${this.datasetId}.${this.tableId}\``;
     }
-}
-
-function delay(timeout: number): Promise<void> {
-    return new Promise<void>(resolve => {
-        setTimeout(() => {
-            resolve();
-        }, timeout);
-    });
 }
