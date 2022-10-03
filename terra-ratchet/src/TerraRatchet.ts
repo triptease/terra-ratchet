@@ -1,5 +1,6 @@
 import {ExecutedScripts, RunnableScripts, Script, ScriptRunner} from "./api";
-import {array, ascending, by} from "@bodar/totallylazy/collections";
+import {ascending, by} from "@bodar/totallylazy/collections";
+import {array} from "@bodar/totallylazy/array";
 import {ConsoleLogger, Logger} from "./Logger";
 import {zip} from "@bodar/totallylazy/transducers";
 

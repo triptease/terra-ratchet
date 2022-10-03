@@ -8,3 +8,7 @@ export const failingScript: Script = {
     name: 'failing.sh',
     hash: 'fe206b51bff2100e6deace9121bbedfd846a5865c5489a7b0ef05dbe14955d8f',
 };
+export const helloWorld: Script = {
+    hash: 'e2c682107b743ee2e2b983c5fa854a25c639bebae5f96a97608a2adc7007e2f8',
+    name: 'hello-world.ts'
+}

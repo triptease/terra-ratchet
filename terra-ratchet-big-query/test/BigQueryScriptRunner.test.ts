@@ -1,5 +1,5 @@
 import {File} from "@bodar/totallylazy/files";
-import {array} from "@bodar/totallylazy/collections";
+import {array} from "@bodar/totallylazy/array";
 import {expect} from "chai";
 import {BigQueryScriptRunner} from "../src";
 import {canConnectToBigQuery, datasetId, projectId} from "./BigQueryTestConfig";

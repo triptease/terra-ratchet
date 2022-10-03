@@ -5,15 +5,12 @@ import {run} from "@bodar/totallylazy/run";
 export class ShellScriptRunner implements ScriptRunner {
     private readonly directory: File;
 
-    constructor(directory: string | File, private env?: NodeJS.ProcessEnv) {
+    constructor(directory: string | File, private env?: NodeJS.ProcessEnv, private commandPrefix: string[] = []) {
         this.directory = typeof directory === "string" ? new File(directory) : directory;
     }
 
-    async* run(script: Script): AsyncIterableIterator<string> {
-        yield* run({
-            command: this.directory.child(script.name).absolutePath,
-            cwd: this.directory.absolutePath,
-            env: this.env,
-        } as any);
+    run(script: Script): AsyncIterableIterator<string> {
+        const command = [...this.commandPrefix, this.directory.child(script.name).absolutePath];
+        return run({command, cwd: this.directory.absolutePath, env: this.env});
     }
 }
