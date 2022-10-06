@@ -1,8 +1,6 @@
 import {RunnableScripts, Script} from "./api";
 import {File} from "@bodar/totallylazy/files";
-import {filter, map} from "@bodar/totallylazy/transducers";
 import {hashSHA256} from "./hash";
-import {array} from "@bodar/totallylazy/array";
 
 export class FileRunnableScripts implements RunnableScripts {
     private readonly directory: File;
