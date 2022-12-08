@@ -3,7 +3,9 @@ import {BigQuery} from "@google-cloud/bigquery";
 
 export const projectId = process.env.GOOGLE_CLOUD_PROJECT ?? 'triptease-terra-ratchet';
 export const datasetId = 'temp';
-export const tableId = 'ratchet-' + randomHash();
+export function tableId() {
+  return 'ratchet-' + randomHash();
+}
 
 export async function canConnectToBigQuery(): Promise<boolean> {
     try {

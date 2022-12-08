@@ -29,6 +29,17 @@ describe('TerraRatchet', async () => {
         expect(allRun).to.eql([]);
     });
 
+    it('ignores duplicates', async () => {
+        const ignoresDuplicatesInRunnable = await new TerraRatchet(
+            new InMemoryRunnableScripts([script1, script2, script2]),
+            new InMemoryExecutedScripts([script1])).scriptsToRun();
+        expect(ignoresDuplicatesInRunnable).to.eql([script2]);
+        const ignoresDuplicatesInExecuted = await new TerraRatchet(
+            new InMemoryRunnableScripts([script1, script2]),
+            new InMemoryExecutedScripts([script1, script1])).scriptsToRun();
+        expect(ignoresDuplicatesInExecuted).to.eql([script2]);
+    });
+
     it('should error when hash does not match previous executed script', async () => {
         const shouldThrow = async () => await new TerraRatchet(
             new InMemoryRunnableScripts([changedScript1, script2]),

@@ -1,5 +1,5 @@
 import {ExecutedScripts, RunnableScripts, Script, ScriptRunner} from "./api";
-import {ascending, by} from "@bodar/totallylazy/collections";
+import {ascending, by, comparators} from "@bodar/totallylazy/collections";
 import {array} from "@bodar/totallylazy/array";
 import {ConsoleLogger, Logger} from "./Logger";
 import {zip} from "@bodar/totallylazy/transducers";
@@ -12,9 +12,9 @@ export class TerraRatchet {
     }
 
     async scriptsToRun(): Promise<Script[]> {
-        const runnables = sort((await this.runnables.scripts())
-            .filter(s => !this.ignoreExtensions.some(extension => s.name.endsWith(extension))));
-        const executed = sort(await this.executed.list());
+        const runnables = sort(deduplicate(await this.runnables.scripts()))
+            .filter(s => !this.ignoreExtensions.some(extension => s.name.endsWith(extension)));
+        const executed = sort(deduplicate(await this.executed.list()));
         this.logger.log(`Previously executed scripts ${executed.length}`);
         const zipped = array(runnables, zip(executed));
         for (const [runnable, executed] of zipped) {
@@ -51,4 +51,12 @@ export class TerraRatchet {
 
 function sort(scripts: Script[]): Script[] {
     return scripts.sort(by('name', ascending));
+}
+
+function deduplicate(scripts: Script[]): Script[] {
+    return scripts.sort(comparators(by('name'), by('hash'))).reduce((a, s) => {
+        if(a[a.length -1]?.name === s.name) return a;
+        a.push(s);
+        return a;
+    }, [] as Script[]);
 }
