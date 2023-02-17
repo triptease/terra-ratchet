@@ -54,6 +54,7 @@ const tableId = 'ratchet-table-id';
         .register('006-create-redis-server.sh', new NoOpScriptRunner()) // skip manually ran script
         .register('sql', new BigQueryScriptRunner(directory, projectId, datasetId))
         .register('sh', new ShellScriptRunner(directory, env))
+        .register('ts', new ShellScriptRunner(directory, env, ['yarn', 'ts-node'])) // run Typescript script
         .run();
 })();
 ```
@@ -87,7 +88,7 @@ It's worth remember than any command can be run if it has a command line, the SQ
 | ScriptRunner         | Status    | Description                                                 |
 |----------------------|-----------|-------------------------------------------------------------|
 | NoOpScriptRunner     | Released  | Does nothing. Can be used to ignore a manually run script   |
-| ShellScriptRunner    | Released  | Used to run a shell command (anything, no plugins required) |
+| ShellScriptRunner    | Released  | Used to run a shell command (anything, no plugins required including Typescript) |
 | BigQueryScriptRunner | Released  | Used to run BigQuery SQL statements                         |
 | PostgresScriptRunner | Planned   | Used to run Postgres SQL statements                         |
 
